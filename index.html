@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Política de privacidad — RequiCreator</title>
+  <meta name="robots" content="index,follow" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; margin: 0; background: #0b0f19; color: #e8eaf0; }
+    main { max-width: 920px; margin: 0 auto; padding: 40px 18px 64px; }
+    h1 { font-size: 30px; margin: 0 0 10px; }
+    h2 { font-size: 18px; margin: 28px 0 8px; }
+    p, li { color: #cfd3df; }
+    .card { background: #121a2b; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 18px 18px; margin: 14px 0; }
+    code { background: rgba(255,255,255,.08); padding: 2px 6px; border-radius: 6px; }
+    a { color: #9cc3ff; }
+    .muted { color: #aab1c2; font-size: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Política de privacidad — RequiCreator</h1>
+  <p class="muted">Última actualización: 2026-02-20</p>
+
+  <div class="card">
+    <p>
+      RequiCreator es un GPT orientado a la creación y actualización de catálogos de requisitos de privacidad y cumplimiento
+      normativo. Para sincronizar el contenido del catálogo y generar la salida final, el GPT puede realizar llamadas a un
+      servicio externo de automatización (Make) mediante un webhook autenticado.
+    </p>
+  </div>
+
+  <h2>1. Qué datos se tratan</h2>
+  <p>
+    RequiCreator puede tratar información que el usuario introduzca o apruebe durante la conversación, estrictamente para
+    construir y sincronizar el catálogo. En particular, los datos enviados al webhook de Make pueden incluir:
+  </p>
+  <ul>
+    <li><code>catalog_id</code> (identificador del catálogo)</li>
+    <li><code>nombre_catalogo</code>, <code>normativa</code> (p. ej., RGPD, LOPDGDD, ENS, ISO/IEC 27001)</li>
+    <li><code>introduccion</code> (objetivo, alcance, actualizaciones)</li>
+    <li><code>categorias</code></li>
+    <li>Requisitos por categoría (<code>requisitos</code>): id, título, descripción, criterios de aceptación, prioridad, categoría, fuente y justificación</li>
+  </ul>
+  <p>
+    <strong>Recomendación:</strong> no introduzcas datos personales, información confidencial o secretos comerciales en los campos
+    del catálogo. Si el contenido que aportas incluye datos personales, serás responsable de contar con una base legítima y de
+    minimizar la información conforme a la normativa aplicable.
+  </p>
+
+  <h2>2. Finalidad del tratamiento</h2>
+  <p>
+    La finalidad es:
+  </p>
+  <ul>
+    <li>Crear/actualizar catálogos de requisitos de privacidad con estructura y formato consistentes.</li>
+    <li>Sincronizar el estado del catálogo en un sistema externo (Make) durante las fases <code>intro</code> y <code>requisitos</code>.</li>
+    <li>Recibir el catálogo final en formato JSON durante la fase <code>finalizar</code>, y devolverlo al usuario.</li>
+  </ul>
+
+  <h2>3. Base de legitimación</h2>
+  <p>
+    La base de legitimación es la prestación del servicio a solicitud del usuario y su interacción voluntaria con el GPT
+    (ejecución a petición del usuario). Si se incluyeran datos personales, el usuario debe garantizar que dispone de una base
+    legal adecuada y que respeta los principios de minimización y finalidad.
+  </p>
+
+  <h2>4. Destinatarios y transferencias</h2>
+  <p>
+    El GPT puede enviar el contenido indicado en el apartado 2 a:
+  </p>
+  <ul>
+    <li><strong>Make (Integromat)</strong> como proveedor de automatización, mediante webhook.</li>
+  </ul>
+  <p>
+    El procesamiento y ubicación de datos puede depender de la configuración del escenario y del proveedor. Revisa la documentación
+    y políticas de Make si necesitas garantías adicionales.
+  </p>
+
+  <h2>5. Seguridad</h2>
+  <p>
+    El webhook de Make está protegido mediante autenticación por <strong>API Key</strong> en cabecera HTTP
+    (<code>x-make-apikey</code>). Adicionalmente, pueden aplicarse validaciones de formato y controles de tamaño del payload en el escenario.
+  </p>
+
+  <h2>6. Conservación</h2>
+  <p>
+    La conservación del contenido del catálogo depende de la configuración del escenario en Make (p. ej., almacenamiento temporal,
+    base de datos, hojas de cálculo o registros). El objetivo es conservarlo únicamente el tiempo necesario para completar la
+    sincronización y generación del catálogo, salvo que el responsable configure explícitamente retenciones mayores.
+  </p>
+
+  <h2>7. Derechos</h2>
+  <p>
+    Si se tratasen datos personales, podrás solicitar acceso, rectificación, supresión, oposición, limitación y portabilidad
+    según la normativa aplicable, contactando con el responsable indicado en el apartado 1.
+  </p>
+
+  <h2>8. Cambios en esta política</h2>
+  <p>
+    Esta política puede actualizarse para reflejar cambios en el funcionamiento del GPT, del escenario de Make o de requisitos
+    normativos. La fecha de “Última actualización” se modificará en consecuencia.
+  </p>
+
+  <hr style="border:0;border-top:1px solid rgba(255,255,255,.10);margin:34px 0;" />
+  <p class="muted">
+    Nota: RequiCreator es un asistente para apoyar tareas de documentación y cumplimiento. No sustituye asesoramiento legal profesional.
+  </p>
+</main>
+</body>
+</html>
